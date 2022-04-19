@@ -1,10 +1,10 @@
-import { deleteSighting } from "./SightingService"
+import SightingService from "../services/SightingService";
 
 const SightingCard = ({sighting, removeSighting}) => {
 
     console.log(sighting);
     const handleDelete = () => {
-        deleteSighting(sighting._id).then(()=>{
+        SightingService.deleteSighting(sighting._id).then(()=>{
             removeSighting(sighting._id);
         })
     }
